@@ -1,2 +1,8 @@
-const headerELEM = $("header");
-headerELEM.html("<h1>Web Áruház</h1>");
+const articleELEM = $();
+const asideELEM = $();
+
+export function megjelenites(txt) {}
+
+kosarbaTesz();
+kereses();
+rendeles();

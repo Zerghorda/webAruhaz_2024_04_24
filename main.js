@@ -1,1 +1,2 @@
-import {  } from "./fuggvenyek.js";
+import { megjelenites } from "./fuggvenyek.js";
+megjelenites();
