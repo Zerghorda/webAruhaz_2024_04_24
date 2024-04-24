@@ -18,18 +18,18 @@
 
 ------------------------------------------------fügvények--------------------------------------------------------------------
 
-táblázat összeálít(lista)-> txt - összeálítja a html kód szövegét formátumba
+tablazatOsszeallit(lista)-> txt - összeálítja a html kód szövegét  táblázatos formátumba - pl kosarat is így jelenítjük meg. 
 
 megjelenit(txt) - megjelenít egy html szöveget egy html elembe
 
-kartyakOsszeAllit(lista) txt - termékek listájábol ki szedett adatokat be tesszük egy kártyába és vissza ajuk hogy jelenítse meg a html
+kartyakOsszeAllit(lista)-> txt - termékek listájábol ki szedett adatokat be tesszük egy kártyába és vissza ajuk hogy jelenítse meg a html
 
-kosarbaTesz(event) lista - ha egyik elemnek a kosárba tesz gombra kattintunk beleteszí kosárba
+kosarbaTesz(adatokLista, index, kosarLista)->kosarLista - ha egyik elemnek a kosárba tesz gombra kattintunk beleteszí kosárba
 
-kereses(lista); - adot név vagy modon keresünk a termékek közül 
+kereses(lista,szoveg, kulcs); - adott szoveget keressük  a termékek kulcs-változóban megadott mezőben
 
-sorTorles(lista, index) - a kosárbol ha elakaruk távolitani egy elemet csak a kuka vagy X gomb ra kell rá nyomnunk
+sorTorles(lista, index) ->lista a kosárbol ha elakaruk távolitani egy elemet csak a kuka vagy X gomb ra kell rá nyomnunk
 
-rendeles() lista - validatorrel ellátott formba lévő adatokat össsze gyüjtük egy listába;
+rendeles(kosarLista)  - validatorrel ellátott formba lévő adatokat össsze gyüjtük egy listába;
 
-kiirPDF(list) - kiirjuk az adatokat egy pdf fileba
+kiirPDF() - kiirjuk az adatokat egy pdf fileba
