@@ -18,17 +18,33 @@ export function kartyakOsszeAllit(lista) {
                 <div class="card-body"> ${element.leiras}</div>
                 <div class="card-footer d-flex justify-content-between mb-3">
                       <div class="p-2">ár: ${element.ar}</div>
-                      <div class ="p-2"> <button class="btn btn-dark kosarba">kosárba</button> </div>
+                      <div class ="p-2"> <button id="${i}" class="kosarba btn btn-dark">kosárba</button> </div>
                 </div>
             </div>
-          </div>`
-          ;
-
+          </div>`;
   });
   txt += `</div>`;
   return txt;
 }
 
-function tablazatOsszealit(lista) {
+export function tablazatOsszealit(lista) {
   let txt = "";
+  txt += `<table class='table table-striped'>`;
+  //szorgalmi fejléc kulcsai is ciklussal írjuk ki
+  let fejlec = ["Termék név", "kép", "Nem", "leírás","ár"];
+  txt += "<tr>";
+  for (let index = 0; index < fejlec.length; index++) {
+    txt += `<th>${fejlec[index]}</th>`;
+  }
+  txt += "</tr>";
+  lista.forEach((element, i) => {
+    txt += `<tr>`;
+    for (const key in element) {
+      txt += `<td>${element[key]}</td>`;
+    }
+    txt += `<td id='${i}' class='kuka'>🗑️</td>`;
+    txt += `</tr>`;
+  });
+  txt += "</table>";
+  return txt;
 }

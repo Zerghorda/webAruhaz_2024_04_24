@@ -1,18 +1,24 @@
-import { megjelenites, kartyakOsszeAllit } from "./fuggvenyek.js";
+import {
+  megjelenites,
+  kartyakOsszeAllit,
+  tablazatOsszealit,
+} from "./fuggvenyek.js";
 import { termekekLISTA } from "./termekek.js";
+import { kosarLISTA } from "./rendeltTermekek.js";
 let nevIrany = 1;
 const articleELEM = $("article");
-const gombElem = $(".kosarba");
 const asideELEM = $("aside");
+
 init(termekekLISTA);
-let kosarLista = {};
-kosarbaTesz();
+
 function kosarbaTesz() {
-  gombElem.click( function (event) {
-    let index = 
-    $(kosarLista).append(event.taget);
+  const gombElem = $("article .kosarba");
+  gombElem.on("click", function (event) {
+    let index = event.target.id;
+    console.log(index);
+    kosarLISTA.push(termekekLISTA[index]);
+    console.log(kosarLISTA);
   });
-  console.log(kosarLista);
 }
 //szuresEsemeny();
 //adminElemHozzad(termekekLISTA);
@@ -20,4 +26,8 @@ function kosarbaTesz() {
 export function init(lista) {
   let txt = kartyakOsszeAllit(lista);
   megjelenites(txt, $("article"));
+  let txt2 = tablazatOsszealit(kosarLISTA);
+  megjelenites(txt2,$("aside"))
+  kosarbaTesz();
+  tablazatOsszealit(termekekLISTA);
 }
