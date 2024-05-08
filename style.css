@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-aside img{
-   width: 200px; 
+aside img {
+  width: 60px;
+}
+#alerSpot {
+  width: 800px;
+  position: fixed;
+  right: 100px;
+  z-index: 100;
 }
